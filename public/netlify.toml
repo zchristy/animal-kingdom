@@ -1,6 +1,6 @@
 [build]
-base = "/"
-publish = "build/"
+base = "/animal-kingdom"
+publish = "animal-kingdom/build/"
 command = "npm build"
 
 [[redirects]]
