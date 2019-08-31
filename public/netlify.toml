@@ -1,0 +1,27 @@
+[build]
+base = "client/"
+publish = "client/build/"
+command = "npm build"
+
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
+
+[[headers]]
+  # Define which paths this specific [[headers]] block will cover.
+  for = "/index.html"
+
+  [headers.values]
+    Access-Control-Allow-Origin =  "*"
+    Access-Control-Allow-Headers = "X-Requested-With, Content-Type, Origin, Authorization, Accept, Client-Security-Token, Accept-Encoding"
+    Access-Control-Allow-Methods = "POST, GET, OPTIONS, DELETE, PUT"
+
+[[headers]]
+  # Define which paths this specific [[headers]] block will cover.
+  for = "/manifest.json"
+
+  [headers.values]
+    Access-Control-Allow-Origin =  "*"
+    Access-Control-Allow-Headers = "X-Requested-With, Content-Type, Origin, Authorization, Accept, Client-Security-Token, Accept-Encoding"
+    Access-Control-Allow-Methods = "POST, GET, OPTIONS, DELETE, PUT"
